@@ -1,0 +1,59 @@
+#navbar{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-family: Din;
+    z-index: 1;
+}
+.navbar{
+    padding: 0;
+}
+.navbar-brand img{
+    height: 46px;
+}
+.container-fluid{
+    padding: 8px 20px;
+}
+#nav-form{
+    width: 272px;
+    border-radius: 15px;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#akun{
+    margin-left: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Din;
+}
+#akun a{
+    background: #3D9879;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+#akun a:hover{
+    background: #C8FFE0;
+    color: #1a1a1a;
+}
+.navbar-nav a{
+    color: white;
+    margin-right: 10px;
+    font-weight: 700;
+}
+.navbar-nav a:hover{
+    color: #FCD53F;
+}
+#navbar-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

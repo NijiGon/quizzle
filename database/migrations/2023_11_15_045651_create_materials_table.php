@@ -15,6 +15,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->foreignId('category_id')->constrained();
             $table->string('name');
+            $table->text('text');
+            $table->string('image')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('audio')->nullable();
             $table->timestamps();
         });
     }

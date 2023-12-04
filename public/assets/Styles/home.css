@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+#banner{
+    height: 100vh;
+    background-image: url(/assets/Images/home_banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -2px;
+}
+#banner-text{
+    font-family: Feather;
+    color: #614BC3;
+    text-shadow: 2px 2px 4px white;
+    text-align: center;
+}
+
+#content{
+    height: 100vh;
+    background-color: #614BC3;
+}
+#content #container{
+    text-align: center;
+    padding-top: 100px;
+}
+#content #container h2{
+    font-family: Feather;
+    color: white;
+}
+#category{
+    margin-top: 48px;
+}
+.col{
+    width: 366px;
+    height: 452px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+#ctg-1{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('Assets/Images/car_home.jpg');
+    background-size: cover;
+}
+#ctg-1:hover{
+    background: url('Assets/Images/car_home.jpg');
+    background-size: cover;
+}
+#ctg-2{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('Assets/Images/horse_home.jpg');
+    background-size: cover;
+}
+#ctg-2:hover{
+    background: url('Assets/Images/horse_home.jpg');
+    background-size: cover;
+}
+#ctg-3{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('Assets/Images/astronaut_home.jpg');
+    background-size: cover;
+}
+#ctg-3:hover{
+    background: url('Assets/Images/astronaut_home.jpg');
+    background-size: cover;
+}

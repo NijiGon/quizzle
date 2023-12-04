@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(assets/Images/home_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -300px;
+}
+a, h1, h3{
+    text-decoration: none;
+    color: white;
+}
+h1, h3{
+    font-family: Feather;
+}
+h1{
+    font-size: 64px;
+}
+h3{
+    font-size: 32px;
+}
+
+#title-list1{
+    padding-top: 48px;
+    font-family: Feather;
+    margin-bottom: 48px;
+}
+#title-list1 h1{
+    margin-bottom: 0;
+}
+
+#kembali{
+    font-family: Feather;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    margin: 55px 50px;
+}
+
+#list-hewan{
+    margin-top: -78px;
+    padding-top: 50px;
+}
+#row-list{
+    display: flex;
+    justify-content: center;
+}
+#row-list a{
+    font-family: Feather;
+    font-size: 24px;
+    
+    width: 240px;
+    height: 240px;
+    background-size: cover;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 10px;
+    border-radius: 12px;
+}
+#sapi{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Hewan/Kategori_Hewan/cow.png); 
+}
+#sapi:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/cow.png);
+    background-size: cover;
+}
+#kambing{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/goat.png); 
+}
+#kambing:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/goat.png);
+    background-size: cover;
+}
+#gajah{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/elephant.png); 
+}
+#gajah:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/elephant.png);
+    background-size: cover;
+}
+#kuda{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/horse.png); 
+}
+#kuda:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/horse.png);
+    background-size: cover;
+}
+#kucing{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Hewan/Kategori_Hewan/cat.png);
+}
+#kucing:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/cat.png);
+    background-size: cover;
+}
+#ikan{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/fish.png); 
+}
+#ikan:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/fish.png);
+    background-size: cover;
+}
+#ayam{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/chicken.png); 
+}
+#ayam:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/chicken.png);
+    background-size: cover;
+}
+#kelinci{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/rabbit.png); 
+}
+#kelinci:hover{
+    background: url(Assets/Images/Hewan/Kategori_Hewan/rabbit.png);
+    background-size: cover;
+}
+
+#quiz-level{
+    height: 100vh;
+    background: #33BBC5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.progress{
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 25px;
+}
+h4{
+    color: white;
+    font-family: Feather;
+    font-size: 28px;
+}
+#grid p{
+    font-family: Feather;
+    font-size: 24px;
+    color: #614BC3;
+}
+.progress-bar{
+    background-color: #3D9879;
+}
+.btn{
+    background: #614BC3;
+    font-family: Feather;
+    border: none;
+}
+.btn:hover{
+    background: #C8FFE0;
+    color: #1a1a1a;
+    border: none;
+}
+/* #title-list2{
+    font-family: Feather;
+    margin-bottom: 48px;
+}
+.row{
+    color: white;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.col a{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+.easy a{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Quiz_Level/easy.png);
+}
+.easy a:hover{
+    background-image: url(Assets/Images/Quiz_Level/easy.png);
+}
+.medium a{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Quiz_Level/medium.png);
+}
+.medium a:hover{
+    background-image: url(Assets/Images/Quiz_Level/medium.png);
+}
+.hard a{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Quiz_Level/hard.png);
+}
+.hard a:hover{
+    background-image: url(Assets/Images/Quiz_Level/hard.png);
+} */
+

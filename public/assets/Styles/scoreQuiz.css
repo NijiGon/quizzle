@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Feather;
+    src: url(Assets/Fonts/Feather/feather_bold_by_typicalbro44_dee263c.ttf);
+}
+@font-face {
+    font-family: Din;
+    src: url(Assets/Fonts/DINRoundPro.ttf);
+}
+@font-face {
+    font-family: DinBold;
+    src: url(Assets/Fonts/DINRoundPro-Black.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    height: 100vh;
+    background: linear-gradient(180deg, #614BC3 14%, #33BBC5 66%, #85E6C5 91%, #C8FFE0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Feather;
+}
+.container{
+    display: grid;
+    grid-gap: 30px;
+}
+h1{
+    font-size: 64px;
+}
+h2{
+    font-size: 48px;
+}
+#star img{
+    width: 52px;
+    height: 49px;
+}
+img + img{
+    margin-left: 23px;
+}
+h3{
+    font-size: 32px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    background-color: #614BC3;
+    border: none;
+    padding: 10px;
+}
+#button a + a{
+    margin-left: 20px;
+}

@@ -1,73 +1,58 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+    <link rel="stylesheet" href="{{asset('assets/Styles/account.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/Styles/font.css')}}">
+    <link rel="icon" href="{{asset('assets/Images/Logo/quizzlet_logo.png')}}" type="image/png">
+</head>
+<body>
+    <section id="account">
+        <div id="container-account" class="container">
+            <div id="form-container">
+                <div id="form-content" class="w-100">
+                    <div id="form-title">
+                        <img src="Assets/Images/Logo/quizzlet_logo.png" alt="">
+                        <h3>Quizzle</h3>
+                    </div>
+                    <form id="form-input" action="{{url('/login')}}" method="POST">
                         @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail" required>
+                        <input type="password" name="password" class="form-control" aria-describedby="emailHelp" placeholder="Kata Sandi" required>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
+                        @endif
+                        <div id="form-button">
+                            <button class="btn btn-dark" type="submit">Masuk</button>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
+                        <div id="form-alt">
+                            <p>
+                                belum punya akun? 
+                                <a href="{{route('register.page')}}">Daftar</a>
+                                <br>
+                                atau masuk dengan
+                            </p>
+                            <a href="" class="btn btn-dark">
+                                <img src="{{asset('assets/Images/Logo/google_logo.png')}}" alt="google_logo">
+                                Google
+                            </a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>
+</body>
+</html>

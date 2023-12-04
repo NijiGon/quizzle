@@ -1,0 +1,22 @@
+#top, #bottom{
+    font-family: Din;
+    text-align: center;
+    padding: 5px;
+}
+#top{
+    background-color: #C8FFE0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#top p{
+    margin-bottom: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#top h5{
+    font-family: Feather;
+}
+#bottom{
+    background-color: #85E6C5;
+}

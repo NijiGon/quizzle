@@ -15,6 +15,10 @@ class UserAnswer extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
+    public function question(){
+        return $this->belongsTo(Question::class, 'question_id', 'id');
+    }
+
     public function option(){
         return $this->belongsTo(Option::class, 'option_id', 'id');
     }

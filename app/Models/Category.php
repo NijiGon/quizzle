@@ -11,11 +11,11 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function quiz(){
-        return $this->hasMany(Quiz::class, 'category_id');
+    public function questions(){
+        return $this->hasMany(Question::class, 'category_id');
     }
 
-    public function material(){
+    public function materials(){
         return $this->hasMany(Material::class, 'category_id');
     }
 }

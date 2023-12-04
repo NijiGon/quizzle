@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\CategoryController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\CategoryController::class, 'index'])->name('home');
+Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.details');
+Route::get('/material/{idx}/{id}', [App\Http\Controllers\MaterialController::class, 'show'])->name('material.details');
+Route::get('/quiz/{idx}/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question.details');
+Route::get('/answer/{id}/submit', [App\Http\Controllers\UserAnswerController::class, 'store'])->name('answer.submit');
+Route::get('/answer/{id}/retry', [App\Http\Controllers\UserAnswerController::class, 'delete'])->name('answer.retry');
+Route::get('/answer/{id}/retake', [App\Http\Controllers\UserAnswerController::class, 'retake'])->name('answer.retake');
+Route::get('/congrats/{id}', [App\Http\Controllers\QuestionController::class, 'finish'])->name('congrats');
+Route::get('/profile', [App\Http\Controllers\UserController::class, 'show'])->name('profile');
+Route::post('/profile/update', [App\Http\Controllers\UserController::class, 'update'])->name('profile.update');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login.page');
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register.page');
+

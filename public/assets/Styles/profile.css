@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(180deg, #614BC3 14%, #33BBC5 66%, #85E6C5 91%, #C8FFE0 100%);
+}
+
+#profile{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#form-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 367px;
+    /* height: 530px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px;
+    border-radius: 12px;
+}
+h3{
+    font-family: Feather;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #614BC3;
+}
+#form-input input{
+    background-color: #614BC3;
+    height: 48px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+}
+#form-input input::placeholder{
+    color: white;
+}
+#form-input input:focus,
+#form-input input:valid{
+    background: white;
+    border: 1px solid #614BC3;
+    color: #614BC3;
+}
+label{
+    font-family: Din;
+    color: #614BC3;
+}
+#button{
+    display: flex;
+}
+.btn{
+    margin-top: 10px;
+    border-radius: 14px;
+    border: none;
+    background-color: #33BBC5;
+    width: 30%;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: DinBold;
+    color: white;
+}
+.btn:hover{
+    background-color: #614BC3;
+    color: white;
+}

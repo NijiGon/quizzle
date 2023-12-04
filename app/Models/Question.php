@@ -11,8 +11,8 @@ class Question extends Model
 
     protected $guarded = ['id'];
 
-    public function quiz(){
-        return $this->belongsTo(Quiz::class, 'quiz_id', 'id');
+    public function category(){
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function options(){

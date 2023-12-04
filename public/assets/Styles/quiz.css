@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    background-image: url(Assets/Images/Hewan/Banner_Quiz/kambing.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -100px;
+}
+a, h1, h3, h2{
+    text-decoration: none;
+    color: white;
+}
+h1, h2, h3, a{
+    font-family: Feather;
+}
+h1{
+    font-size: 64px;
+}
+h2{
+    font-size: 48px;
+}
+h3{
+    font-size: 32px;
+    width: 50%;
+}
+a{
+    font-size: 20px;
+}
+
+#content{
+    height: 100vh;
+}
+#container-quiz{
+    padding: 50px 118px;
+}
+#kembali{
+    color: white;
+}
+#container h3{
+    margin-bottom: 32px;
+}
+.row{
+    text-align: center;
+    width: 40vw;
+}
+.row a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+.row a+a{
+    margin-left: 32px;
+}
+.col{
+    height: 100px;
+    background-color: #3D9879;
+    color: white;
+}
+.col:hover{
+    background-color: #33BBC5;
+}
+#hewan_icon{
+    margin-left: 50vw;
+    margin-top: -250px;
+}
+#hewan_icon img{
+    width: 400px;
+}
+
+#overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,.6);
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#salah{
+    color: red;
+}
+#text-salah{
+    color: white;
+}
+#btn-salah{
+    background-color: #3D9879;
+    color: #1a1a1a;
+    font-size: 24px;
+    font-family: Feather;
+    padding: 15px;
+}

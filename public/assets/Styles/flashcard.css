@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    background: url(Assets/Images/Kendaraan/Banner_Flashcard/car.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -100px;
+}
+a, h1, h3{
+    text-decoration: none;
+    color: white;
+}
+h1, h3{
+    font-family: Feather;
+}
+h1{
+    font-size: 64px;
+}
+h3{
+    font-size: 32px;
+}
+#content{
+    height: 90vh;
+    width: 100vw;
+}
+#material{
+    padding: 20px 50px;
+}
+#material h1, #material h5{
+    color: white;
+}
+#speaker{
+    width: 48px;
+}
+#material h5{
+    font-family: Din;
+    width: 80vw;
+    margin-bottom: 20px;
+}
+.btn{
+    background: #3D9879;
+    color: white;
+    border: none;
+    font-family: Din;
+}
+.btn:hover{
+    background: #C8FFE0;
+}
+#sapi{
+    display: flex;
+    justify-content: end;
+    margin-right: 100px;
+    margin-top: -60px;
+}
+#sapi img{
+    width: 450px;
+}
