@@ -5,9 +5,11 @@
     <style>
         body{
             background-image: url({{asset('assets/Images/Banner/category_banner.jpg')}});
+            background-size: cover;
         }
-        #sapi{
-            
+        .material-view{
+            filter: brightness(0.5);
+            transition: filter 0.1s ease-in-out;
         }
     </style>
 @endsection
@@ -22,7 +24,7 @@
                 <div id="row-list" class="row">
                     @foreach ($materials as $material)
                     {{-- @dump($material) --}}
-                        <a href="{{route('material.details', ['idx' => $loop->index, 'id' => $category->id])}}" style="background-image: url({{asset('assets/Images/MaterialThumbnail/' . $material->icon)}})" id="sapi">{{ $material->name }}</a>
+                        <a class="material-view" href="{{route('material.details', ['idx' => $loop->index, 'id' => $category->id])}}" style="background-image: url({{asset('assets/Images/MaterialThumbnail/' . $material->icon)}})" id="sapi">{{ $material->name }}</a>
                     @endforeach
                 </div>
               </div>
@@ -51,4 +53,26 @@
             </div>
         </section>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all elements with the id 'sapi'
+            var sapiElements = document.querySelectorAll('.material-view');
+
+            // sapiElements.style.filter = 'brightness(.5)'
+
+            // Add event listeners to each 'sapi' element
+            sapiElements.forEach(function (element) {
+                element.addEventListener('mouseenter', function () {
+                    // On mouse enter, adjust brightness
+                    this.style.filter = 'brightness(1)'; // Adjust the brightness value as needed
+                    console.log('test');
+                });
+
+                element.addEventListener('mouseleave', function () {
+                    // On mouse leave, reset brightness
+                    this.style.filter = 'brightness(.5)';
+                });
+            });
+        });
+    </script>
 @endsection

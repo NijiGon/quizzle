@@ -2,9 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Exception;
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
+use GuzzleHttp\Client;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\Catch_;
+use PhpParser\Node\Stmt\TryCatch;
+use Throwable;
 
 class LoginController extends Controller
 {
@@ -37,4 +48,36 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function redirectToGoogle(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback(){
+        try {
+            $google_user = Socialite::driver('google')->user();
+
+            $user = User::where('google_id', $google_user->getId())->first();
+
+            if(!$user){
+                $new_user = User::create([
+                    'name' => $google_user->getName(),
+                    'email' => $google_user->getEmail(),
+                    'google_id' => $google_user->getId(),
+                ]);
+
+                Auth::login($new_user);
+
+                return redirect()->intended('/');
+            }
+            else{
+                Auth::login($user);
+                return redirect()->intended('/');
+            }
+
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd('something went wrong! ' . $th->getMessage());
+        }
+    }
+
 }

@@ -42,6 +42,7 @@ h3{
 #list-hewan{
     margin-top: -78px;
     padding-top: 50px;
+    height: 100vh;
 }
 #row-list{
     display: flex;

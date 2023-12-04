@@ -20,16 +20,13 @@
                 <h2>Quiz {{$question->category->name}}: </h2>
                 <h3>{{$idx}}. {{$question->text}}</h3>
                 <div class="row">
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $question->options[0]->id])}}">{{$question->options[0]->text}}</a>
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $question->options[1]->id])}}">{{$question->options[1]->text}}</a>
+                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[0]->id])}}">{{$options[0]->text}}</a>
+                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[1]->id])}}">{{$options[1]->text}}</a>
                 </div>
                 <div class="row">
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $question->options[2]->id])}}">{{$question->options[2]->text}}</a>
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $question->options[3]->id])}}">{{$question->options[3]->text}}</a>
+                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[2]->id])}}">{{$options[2]->text}}</a>
+                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[3]->id])}}">{{$options[3]->text}}</a>
                 </div>
-                <!-- <div id="hewan_icon">
-                    <img src="Assets/Images/Hewan/Icon_Hewan/fish.png" alt="">
-                </div> -->
             </div>
         </section>
 
@@ -40,7 +37,7 @@
                 @if($idx < $questions->count())
                 <section id="overlay">
                     <div id="check" class="d-flex flex-column justify-content-center align-items-center ">
-                        <h1 id="salah">Benar</h1>
+                        <h1 id="salah" class="text-success ">Benar</h1>
                         <h3 id="text-salah">Selamat!</h3>
                         <a href="{{route('question.details', ['id' => $question->category->id, 'idx' => $idx + 1])}}" id="btn-salah" class="btn">Pertanyaan Selanjutnya</a>
                     </div>

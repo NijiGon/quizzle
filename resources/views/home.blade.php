@@ -6,10 +6,8 @@
         .ctg-1{
             /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{{asset('assets/Images/CategoryThumbnail/' . 'car_home.jpg')}}'); */
             background-size: cover;
-        }
-        .ctg-1:hover{
-            background: url('{{asset('assets/Images/CategoryThumbnail/' . 'car_home.jpg')}}');
-            background-size: cover;
+            filter: brightness(0.5);
+            transition: filter 0.1s ease-in-out;
         }
     </style>
 @endsection
@@ -42,4 +40,26 @@
             </div>
         </section>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all elements with the id 'sapi'
+            var sapiElements = document.querySelectorAll('.ctg-1');
+
+            // sapiElements.style.filter = 'brightness(.5)'
+
+            // Add event listeners to each 'sapi' element
+            sapiElements.forEach(function (element) {
+                element.addEventListener('mouseenter', function () {
+                    // On mouse enter, adjust brightness
+                    this.style.filter = 'brightness(1)'; // Adjust the brightness value as needed
+                    console.log('test');
+                });
+
+                element.addEventListener('mouseleave', function () {
+                    // On mouse leave, reset brightness
+                    this.style.filter = 'brightness(.5)';
+                });
+            });
+        });
+    </script>
 @endsection

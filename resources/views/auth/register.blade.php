@@ -16,7 +16,7 @@
     <section id="account">
         <div class="container">
             <div id="form-container">
-                <div id="form-content">
+                <div id="form-content" class="w-100">
                     <div id="form-title">
                         <img src="Assets/Images/Logo/quizzlet_logo.png" alt="">
                         <h3>Quizzle</h3>

@@ -44,7 +44,7 @@
                                 <br>
                                 atau masuk dengan
                             </p>
-                            <a href="" class="btn btn-dark">
+                            <a href="{{url('auth/google')}}" class="btn btn-dark">
                                 <img src="{{asset('assets/Images/Logo/google_logo.png')}}" alt="google_logo">
                                 Google
                             </a>

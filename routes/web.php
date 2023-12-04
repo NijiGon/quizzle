@@ -29,16 +29,30 @@ Route::get('/home', [App\Http\Controllers\CategoryController::class, 'index'])->
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.details');
 Route::get('/material/{idx}/{id}', [App\Http\Controllers\MaterialController::class, 'show'])->name('material.details');
 Route::get('/quiz/{idx}/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question.details');
-Route::get('/answer/{id}/submit', [App\Http\Controllers\UserAnswerController::class, 'store'])->name('answer.submit');
-Route::get('/answer/{id}/retry', [App\Http\Controllers\UserAnswerController::class, 'delete'])->name('answer.retry');
-Route::get('/answer/{id}/retake', [App\Http\Controllers\UserAnswerController::class, 'retake'])->name('answer.retake');
+
+Route::prefix('admin')->group(function () {
+    Route::get('{id}/submit', [App\Http\Controllers\UserAnswerController::class, 'store'])->name('answer.submit');
+    Route::get('{id}/retry', [App\Http\Controllers\UserAnswerController::class, 'delete'])->name('answer.retry');
+    Route::get('{id}/retake', [App\Http\Controllers\UserAnswerController::class, 'retake'])->name('answer.retake');
+});
+
+
 Route::get('/congrats/{id}', [App\Http\Controllers\QuestionController::class, 'finish'])->name('congrats');
 Route::get('/profile', [App\Http\Controllers\UserController::class, 'show'])->name('profile');
 Route::post('/profile/update', [App\Http\Controllers\UserController::class, 'update'])->name('profile.update');
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login.page');
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register.page');
+
+Route::prefix('auth')->group(function () {
+    Route::get('google', [LoginController::class, 'redirectToGoogle']);
+
+    Route::get('google/callback', [LoginController::class, 'handleGoogleCallback']);
+});
+    
+
 

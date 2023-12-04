@@ -16,7 +16,7 @@
                     <form id="form-input" action="{{route('profile.update')}}" method="POST">
                         @csrf
                         <label for="namaLengkap" class="form-label">Nama</label>
-                        <input type="text" name="name" id="namaLengkap" class="form-control" value={{auth()->user()->name}} aria-describedby="emailHelp" placeholder="Nama Lengkap" required>
+                        <input type="text" name="name" id="namaLengkap" class="form-control" value="{{auth()->user()->name}}" aria-describedby="emailHelp" placeholder="Nama Lengkap" required>
         
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" value="{{auth()->user()->email}}" placeholder="Email" required>

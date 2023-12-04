@@ -14,10 +14,11 @@ class QuestionController extends Controller
         // dump($id);
         $questions = $category->questions;
         $question = $questions[$idx - 1];
+        $options = $question->options->shuffle();
         // $user_answer = null;
         // if(!$questions) abort(404);
         $user_answer = UserAnswer::where('user_id', auth()->id())->where('question_id', $question->id)->first();
-        return view('quiz', compact('question', 'questions', 'idx', 'user_answer'));
+        return view('quiz', compact('question', 'questions', 'idx', 'user_answer', 'options'));
     }
 
     public function finish($id){
