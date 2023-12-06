@@ -48,6 +48,10 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register.page');
 
+Route::get('info', function () {
+    phpinfo();
+});
+
 Route::prefix('auth')->group(function () {
     Route::get('google', [LoginController::class, 'redirectToGoogle']);
 

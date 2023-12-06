@@ -16,9 +16,9 @@
     @yield('style')
 </head>
 <body>
-    <nav id="navbar">
-        <nav class="navbar navbar-expand">
-            <div class="container-fluid">
+    <nav id="navbar w-100" class="pt-3">
+        <nav class="navbar navbar-expand justify-content-center ">
+            <div class="">
                 <div id="navbar-content">
                     <a class="navbar-brand" href="{{route('home')}}">
                         <img src="{{asset('assets/Images/Logo/quizzlet_logo.png')}}" alt="">

@@ -25,12 +25,16 @@ a{
 }
 
 #content{
-    height: 100vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #614BC3;
 }
 #content #container{
     text-align: center;
-    padding-top: 100px;
+    /* padding-top: 100px; */
 }
 #content #container h2{
     font-family: Feather;
