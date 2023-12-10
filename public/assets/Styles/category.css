@@ -51,7 +51,7 @@ h3{
 #row-list a{
     font-family: Feather;
     font-size: 24px;
-    
+
     width: 240px;
     height: 240px;
     background-size: cover;
@@ -64,28 +64,28 @@ h3{
     border-radius: 12px;
 }
 #sapi{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Hewan/Kategori_Hewan/cow.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(Assets/Images/Hewan/Kategori_Hewan/cow.png);
 }
 #sapi:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/cow.png);
     background-size: cover;
 }
 #kambing{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/goat.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/goat.png);
 }
 #kambing:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/goat.png);
     background-size: cover;
 }
 #gajah{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/elephant.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/elephant.png);
 }
 #gajah:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/elephant.png);
     background-size: cover;
 }
 #kuda{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/horse.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/horse.png);
 }
 #kuda:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/horse.png);
@@ -99,21 +99,21 @@ h3{
     background-size: cover;
 }
 #ikan{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/fish.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/fish.png);
 }
 #ikan:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/fish.png);
     background-size: cover;
 }
 #ayam{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/chicken.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/chicken.png);
 }
 #ayam:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/chicken.png);
     background-size: cover;
 }
 #kelinci{
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/rabbit.png); 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url(Assets/Images/Hewan/Kategori_Hewan/rabbit.png);
 }
 #kelinci:hover{
     background: url(Assets/Images/Hewan/Kategori_Hewan/rabbit.png);

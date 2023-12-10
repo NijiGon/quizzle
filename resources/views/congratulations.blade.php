@@ -15,18 +15,26 @@
 </head>
 <body>
     <section>
-        <audio src="{{asset('assets/Audio/quizFlashcard.m4a')}}" autoplay></audio>
+        <audio src="{{asset('assets/Audio/quizFlashcard.m4a')}}" autoplay loop></audio>
         <div class="container">
             <h2>Quiz {{$category->name}}</h2>
             <h1>Score:</h1>
             <div id="star">
+                @for ($i = 0; $i < $star_count; $i++)
+                    <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
+                @endfor
+                {{-- <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
                 <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
                 <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
                 <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
+                <img src="{{asset('assets/Images/Logo/star.png')}}" alt=""> --}}
             </div>
-            <h3>Keren Sekali! Kamu dapat menjawab semua dengan benar!</h3>
+            @if ($star_count === 5)
+                <h3>Keren Sekali! Kamu dapat menjawab semua dengan benar!</h3>
+            @else
+                <h3>Kamu salah {{ $mistake_count }} kali</h3>
+            @endif
+
             <div id="button">
                 {{-- <a href="#" class="btn btn-dark">Selanjutnya</a> --}}
                 <a href="{{route('category.details', ['id' => $category->id])}}" class="btn btn-dark">Kembali</a>

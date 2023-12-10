@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\UserAnswer;
+use App\Models\UserMistake;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\progress;
@@ -27,7 +29,10 @@ class CategoryController extends Controller
                 }
             }
         }
+        $mistakes = UserMistake::where('user_id', auth()->id())->where('category_id', $id)->first();
+        // dd($mistakes);
+        // dd($user_answers);
         $percentage = ($progress/$category->questions->count())*100;
-        return view('category', compact('category', 'materials', 'progress', 'percentage'));
+        return view('category', compact('category', 'materials', 'progress', 'percentage', 'mistakes'));
     }
 }

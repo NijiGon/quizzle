@@ -1,24 +1,64 @@
 @extends('layouts.headfoot')
 @section('title', 'Quiz - ' . $question->category->name . ' - ' . $idx)
 @section('style')
-    <link rel="stylesheet" href="{{asset('assets/Styles/quiz.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/Styles/quiz.css') }}">
+
     <style>
-        body{
+        body {
             overflow-x: hidden;
-            background-image: url({{asset('assets/Images/Quiz/' . $question->image)}});
+            background-image: url({{ asset('assets/Images/Quiz/' . $question->image) }});
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 0px -100px;
         }
+        .navbar{
+            align-items: baseline;
+        }
+        .test{}
     </style>
 @endsection
 @section('content')
     <div>
         <section id="content">
             <div id="container-quiz">
-                <a id="kembali" href="{{route('category.details', ['id' => $question->category->id])}}">< Kembali</a>
-                <h2>Quiz {{$question->category->name}}: </h2>
-                <h3>{{$idx}}. {{$question->text}}</h3>
+                <nav class="navbar">
+                    <div class="d-flex align-items-center gap-3">
+                        <a id="" href="{{route('category.details', ['id' => $question->category->id])}}" class="burger">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <div class="d-flex align-items-center " type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+
+                            <span class=" burger">
+                                <span class="toggler-stripe"></span>
+                                <span class="toggler-stripe"></span>
+                                <span class="toggler-stripe"></span>
+                            </span>
+
+                        </div>
+                        <h2>Quiz {{ $question->category->name }}:</h2>
+                    </div>
+
+                </nav>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="" id="sidebarLabel">List Pertanyaan</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach ($questions as $q)
+                                @if ($loop->index+1 <= $idx )
+                                    <a href="{{ route('question.details', ['id' => $id, 'idx' => $loop->index+1]) }}" class="sidebar">{{ $loop->index+1 }}</a>
+                                @else
+                                    <a href="{{ route('question.details', ['id' => $id, 'idx' => $loop->index+1]) }}" class=" disabled ">{{ $loop->index+1 }}</a>
+                                @endif
+
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <h3>{{ $idx }}. {{ $question->text }}</h3>
                 <div class="row">
                     <a class="col shadow" href="{{route('answer.submit', ['id' => $options[0]->id])}}">{{$options[0]->text}}</a>
                     <a class="col shadow" href="{{route('answer.submit', ['id' => $options[1]->id])}}">{{$options[1]->text}}</a>
@@ -30,8 +70,6 @@
             </div>
         </section>
 
-        
-    
         @if ($user_answer !== null)
             @if ($user_answer->option->is_correct === 1)
                 @if($idx < $questions->count())
@@ -45,7 +83,7 @@
                 @else
                 <section id="overlay">
                     <div id="check" class="d-flex flex-column justify-content-center align-items-center ">
-                        <h1 id="salah">Benar</h1>
+                        <h1 id="salah" class="text-success">Benar</h1>
                         <h3 id="text-salah">Selamat!</h3>
                         <a href="{{route('congrats', ['id' => $question->category->id])}}" id="btn-salah" class="btn">Selesaikan Quiz</a>
                     </div>
@@ -61,6 +99,11 @@
             </section>
             @endif
         @endif
-        
+
     </div>
+@endsection
+
+@section('scripts')
+    <!-- Bootstrap JS (Required for the offcanvas functionality) -->
+    <script src="{{ asset('assets/Scripts/bootstrap.bundle.min.js') }}"></script>
 @endsection

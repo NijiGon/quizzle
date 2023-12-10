@@ -10,6 +10,7 @@
             background-position: 0px -100px;
             overflow-x: hidden;
         }
+        test{}
     </style>
 @endsection
 @section('content')
@@ -17,20 +18,24 @@
         <section id="content">
             <div id="material">
                 <h1>
-                    {{$material->name}} 
+                    {{$material->name}}
                     <a href="#" id="clickButton">
                         <audio id="clickSound" src="{{asset('assets/Audio/' . $material->audio)}}"></audio>
                         <img id="speaker" src="{{asset('assets/Images/Logo/speaker_putih.png')}}" alt="">
                     </a>
                 </h1>
                 <h5>{{$material->text}}</h5>
-                
+
                 @if ($idx > 0)
-                <a href="{{route('material.details', ['id' => $material->category->id, 'idx' => $idx - 1])}}" class="btn">< Kembali</a>
+                <a href="{{route('material.details', ['id' => $material->category->id, 'idx' => $idx - 1])}}" class="btn">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
                 @endif
                 <a href="{{route('category.details', ['id' => $material->category->id])}}" class="btn">Kategori</a>
                 @if($idx < $materials->count() - 1)
-                <a href="{{route('material.details', ['id' => $material->category->id, 'idx' => $idx + 1])}}" class="btn">Selanjutnya ></a>
+                <a href="{{route('material.details', ['id' => $material->category->id, 'idx' => $idx + 1])}}" class="btn">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
                 @endif
             </div>
         </section>

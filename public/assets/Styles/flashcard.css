@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    /* box-sizing: border-box; */
 }
 body{
     overflow-x: hidden;
@@ -27,7 +28,8 @@ h3{
     width: 100vw;
 }
 #material{
-    padding: 20px 50px;
+    padding: 20px 100px;
+    /* padding-left: 100px !important; */
 }
 #material h1, #material h5{
     color: white;
@@ -39,12 +41,14 @@ h3{
     font-family: Din;
     width: 80vw;
     margin-bottom: 20px;
+    font-size: 28px;
 }
 .btn{
     background: #3D9879;
     color: white;
     border: none;
     font-family: Din;
+    font-size: 25px;
 }
 .btn:hover{
     background: #C8FFE0;

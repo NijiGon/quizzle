@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Option;
 use App\Models\UserAnswer;
+use App\Models\UserMistake;
 use Illuminate\Http\Request;
 
 class UserAnswerController extends Controller
 {
     //
     public function store($id){
+        $user = auth()->user();
         $option = Option::find($id);
         $user_answer = UserAnswer::create([
             'user_id' => auth()->id(),
@@ -17,6 +19,20 @@ class UserAnswerController extends Controller
             'question_id' => $option->question->id
         ]);
         $user_answer->save();
+        if($option->is_correct !== 1){
+            $user_mistake = $user->mistakes->where('category_id', $option->question->category_id)->first();
+            if($user_mistake !== null){
+                $user_mistake->mistakes += 1;
+                $user_mistake->save();
+            }
+            else{
+                $user_mistake = UserMistake::create([
+                    'user_id' => auth()->id(),
+                    'category_id' => $option->question->category_id,
+                    'mistakes' => 1,
+                ]);
+            }
+        }
         return redirect()->back();
     }
     public function delete($id){
@@ -25,12 +41,15 @@ class UserAnswerController extends Controller
         return redirect()->back();
     }
     public function retake($id){
-        $answers = auth()->user()->answers;
+        $user = auth()->user();
+        $answers = $user->answers;
         foreach($answers as $answer){
             if($answer->question->category->id == $id){
                 $answer->delete();
             }
         }
+        $mistake = $user->mistakes->where('category_id', $id)->first();
+        if($mistake !== null) $mistake->delete();
         return redirect()->back();
     }
 }

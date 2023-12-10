@@ -23,13 +23,12 @@
                 </div>
                 <div id="row-list" class="row">
                     @foreach ($materials as $material)
-                    {{-- @dump($material) --}}
                         <a class="material-view" href="{{route('material.details', ['idx' => $loop->index, 'id' => $category->id])}}" style="background-image: url({{asset('assets/Images/MaterialThumbnail/' . $material->icon)}})" id="sapi">{{ $material->name }}</a>
                     @endforeach
                 </div>
               </div>
         </section>
-    
+
         <section id="quiz-level">
             <div id="grid">
                 @auth
@@ -39,14 +38,17 @@
                     <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="3" aria-valuemin="0" aria-valuemax="15">
                         <div class="progress-bar" style="width: {{$percentage}}%"></div>
                     </div>
-                    @if ($percentage !== 100)
+                    @if ($percentage !== 100 && $mistakes === null )
                         <a href="{{route('question.details', ['idx' => $progress + 1, 'id' => $category->id])}}" class="btn btn-primary">Mulai Quiz</a>
+                    @elseif ($progress > 0 || $mistakes !== null || $mistakes->mistakes > 0)
+                        <a href="{{route('answer.retake', ['id' => $category->id])}}" class="btn btn-primary">Ulangi Quiz</a>
                     @else
-                    <a href="{{route('answer.retake', ['id' => $category->id])}}" class="btn btn-primary">Retake Quiz</a>
+                        <a href="{{route('answer.retake', ['id' => $category->id])}}" class="btn btn-primary">Ulangi Quiz</a>
                     @endif
-                    
+
                 @endauth
                 @guest
+                    {{-- <img src="{{ asset('assets/Images/Logo/empty.png') }}" alt=""> --}}
                     <h3>Kamu belum mendaftar</h3>
                     <a href="{{route('login.page')}}" class="btn btn-primary">Masuk</a>
                 @endguest

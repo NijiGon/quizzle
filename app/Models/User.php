@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function answers(){
         return $this->hasMany(UserAnswer::class, 'user_id');
     }
+    public function mistakes(){
+        return $this->hasMany(UserMistake::class, 'user_id');
+    }
 }

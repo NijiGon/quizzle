@@ -13,7 +13,7 @@
 @endsection
 @section('content')
     <div>
-        <audio src="{{asset('assets/Audio/home.m4a')}}" autoplay></audio>
+        <audio src="{{asset('assets/Audio/home.m4a')}}" autoplay loop></audio>
         <section id="banner">
             <div id="banner-text" class="">
                 <h1>Quizzle</h1>

@@ -56,12 +56,56 @@ a{
 .row a+a{
     margin-left: 32px;
 }
+.navbar{
+    display: flex;
+    align-items: flex-start;
+}
+.toggler-stripe {
+    background-color: white; /* Set the color to white or your desired color */
+    height: 3px; /* Adjust the height of the stripes */
+    width: 25px; /* Adjust the width of the stripes */
+    display: block;
+    margin-top: 5px; /* Adjust the spacing between the stripes */
+    margin-bottom: 5px;
+}
+.burger{
+    background-color: #3D9879;
+    color: white;
+    transition: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+}
+.disabled{
+    opacity: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background-color: white;
+    color: #3D9879;
+    border: #3D9879 solid;
+    transition: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    pointer-events: none;
+}
+.sidebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background-color: #3D9879;
+    color: white;
+    border-radius: 7px;
+    padding: 12px 20px;
+    transition: .15s ease-in-out;
+}
 .col{
     height: 100px;
     background-color: #3D9879;
     color: white;
 }
-.col:hover{
+.col:hover, .sidebar:hover{
     background-color: #33BBC5;
 }
 #hewan_icon{

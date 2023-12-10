@@ -21,12 +21,17 @@
 .container-fluid{
     padding: 8px 20px;
 }
-#nav-form{
+#nav-form, #searchResults{
     width: 272px;
     border-radius: 15px;
 
     margin-top: auto;
     margin-bottom: auto;
+}
+#searchResults{
+    /* padding-top: 38px;
+    transform: translateY(-38px); */
+    /* z-index: 0; */
 }
 #akun{
     margin-left: 70px;
