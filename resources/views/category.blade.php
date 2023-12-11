@@ -41,6 +41,7 @@
                     @if ($percentage !== 100 && $mistakes === null )
                         <a href="{{route('question.details', ['idx' => $progress + 1, 'id' => $category->id])}}" class="btn btn-primary">Mulai Quiz</a>
                     @elseif ($progress > 0 || $mistakes !== null || $mistakes->mistakes > 0)
+                        <a href="{{route('question.details', ['idx' => $progress + 1, 'id' => $category->id])}}" class="btn btn-primary">Mulai Quiz</a>
                         <a href="{{route('answer.retake', ['id' => $category->id])}}" class="btn btn-primary">Ulangi Quiz</a>
                     @else
                         <a href="{{route('answer.retake', ['id' => $category->id])}}" class="btn btn-primary">Ulangi Quiz</a>
