@@ -15,11 +15,11 @@ class UserController extends Controller
         }
         return view('profile');
     }
-    
+
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'password' => 'required|max:255|min:8',
             // Add more fields if needed
@@ -46,10 +46,10 @@ class UserController extends Controller
                 'password' => Hash::make($request->input('password')),
             ]);
         }
-        
+
 
         // Update the user's profile
-        
+
 
         return redirect()->route('profile');
     }
