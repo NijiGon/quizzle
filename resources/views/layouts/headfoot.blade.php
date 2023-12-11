@@ -53,11 +53,12 @@
                         @endguest
                         @auth
                         <li class="nav-item">
-                            @if (strlen(auth()->user()->name) <= 20)
+                            <a class="nav-link" href="{{route('profile')}}">{{ (strlen(auth()->user()->name) > 20) ? substr(auth()->user()->name, 0, 20) . '...' : auth()->user()->name }}</a>
+                            {{-- @if (strlen(auth()->user()->name) <= 20)
                                 <a class="nav-link" href="{{route('profile')}}">{{ auth()->user()->name }}</a>
                             @else
                                 <a class="nav-link" href="{{route('profile')}}">{{ str_limit(auth()->user()->name, 20, '...') }}</a>
-                            @endif
+                            @endif --}}
                         </li>
                         @endauth
                     </ul>
