@@ -22,7 +22,6 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|max:255|min:8',
-            // Add more fields if needed
         ]);
 
         // Check if the provided password matches the user's current password
