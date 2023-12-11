@@ -22,9 +22,9 @@
     </style>
 </head>
 <body>
-    <nav id="navbar w-100" class="pt-3">
+    <nav id="navbar w-100" class="pt-3 sticky-top">
         <nav class="navbar navbar-expand justify-content-center ">
-            <div class="">
+            <div class=" ">
                 <div id="navbar-content">
                     <a class="navbar-brand" href="{{route('home')}}">
                         <img src="{{asset('assets/Images/Logo/quizzlet_logo.png')}}" alt="">

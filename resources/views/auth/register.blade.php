@@ -26,7 +26,7 @@
                         <input type="name" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Nama Lengkap" required>
                         <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" required>
                         <input type="password" name="password" class="form-control" aria-describedby="emailHelp" placeholder="Kata Sandi" required>
-                        <input type="password" name="password_confirmation" class="form-control" aria-describedby="emailHelp" placeholder="Kata Sandi" required>
+                        <input type="password" name="password_confirmation" class="form-control" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi" required>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -37,13 +37,13 @@
                             </div>
                         @endif
 
-                    
+
                         <div id="form-button">
                             <button type="submit" class="btn btn-dark">Daftar</button>
                         </div>
                         <div id="form-alt">
                             <p>
-                                Sudah punya akun? 
+                                Sudah punya akun?
                                 <a href="{{route('login.page')}}">Masuk</a>
                             </p>
                         </div>
