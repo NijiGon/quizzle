@@ -41,10 +41,9 @@
         </section>
     </div>
     <script>
-        var clickSound = document.getElementById('clickSound');
-        var clickButton = document.getElementById('clickButton');
-
         clickButton.addEventListener('click', function() {
+            var clickSound = document.getElementById('clickSound');
+            var clickButton = document.getElementById('clickButton');
             if (clickSound.paused) {
                 clickSound.play();
             } else {

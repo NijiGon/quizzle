@@ -50,9 +50,6 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register.page');
 
-Route::get('info', function () {
-    phpinfo();
-});
 
 Route::get('search', [SearchController::class, 'search'])->name('search');
 

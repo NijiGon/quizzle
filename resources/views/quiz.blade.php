@@ -104,6 +104,5 @@
 @endsection
 
 @section('scripts')
-    <!-- Bootstrap JS (Required for the offcanvas functionality) -->
     <script src="{{ asset('assets/Scripts/bootstrap.bundle.min.js') }}"></script>
 @endsection

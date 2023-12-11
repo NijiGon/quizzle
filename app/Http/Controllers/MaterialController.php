@@ -13,10 +13,9 @@ class MaterialController extends Controller
     //
     public function show($idx, $id){
         $category = Category::find($id);
-        // dump($id);
         $materials = $category->materials;
+        if($idx > $materials->count() - 1) abort(404);
         $material = $materials[$idx];
-        if(!$material) abort(404);
         return view('flashcard', compact('material', 'materials', 'idx'));
     }
 }
