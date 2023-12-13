@@ -49,12 +49,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     public function redirectToGoogle(){
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
     public function handleGoogleCallback(){
         try {
-            $google_user = Socialite::driver('google')->user();
+            // $google_user = Socialite::driver('google')->user();
+            $google_user = Socialite::driver('google')->stateless()->user();
+
 
             $user = User::where('google_id', $google_user->getId())->first();
 
@@ -74,9 +76,10 @@ class LoginController extends Controller
                 return redirect()->intended('/');
             }
 
-        } catch (\Throwable $th) {
+        } catch (\Exception $th) {
             //throw $th;
-            dd('something went wrong! ' . $th->getMessage());
+            Log::error('Google OAuth Error:', ['error' => $th]);
+            dd($th->getMessage());
         }
     }
 

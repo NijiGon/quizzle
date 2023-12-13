@@ -23,10 +23,6 @@ class AnswerCheck
         $category = Category::find($id);
         $questions = $category->questions;
         $userId = auth()->id();
-
-
-        // Uncomment the following line to check the value of $userAnswer
-        // dd($userAnswer);
         if($idx < 0) return abort(404);
 
         if ($idx >= 1) {
@@ -39,26 +35,17 @@ class AnswerCheck
                     $userAnswer = UserAnswer::where('user_id', $userId)
                         ->where('question_id', $questions[$i]->id)
                         ->first();
-
                     if ($userAnswer !== null) {
                         if($userAnswer->option->is_correct === 1)
                             return redirect()->route('question.details', ['id' => $id, 'idx' => $i + 2]);
                         else
                             return redirect()->route('question.details', ['id' => $id, 'idx' => $i + 1]);
                     }
-
                     $i--;
                 }
                 return redirect()->route('question.details', ['id' => $id, 'idx' =>  1]);
             }
-
-
         }
-
         return $next($request);
-
     }
-
-
-
 }

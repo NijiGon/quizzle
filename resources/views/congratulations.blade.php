@@ -23,11 +23,6 @@
                 @for ($i = 0; $i < $star_count; $i++)
                     <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
                 @endfor
-                {{-- <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt="">
-                <img src="{{asset('assets/Images/Logo/star.png')}}" alt=""> --}}
             </div>
             @if ($star_count === 5)
                 <h3>Keren Sekali! Kamu dapat menjawab semua dengan benar!</h3>

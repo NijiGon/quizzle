@@ -53,11 +53,9 @@ Route::get('/register', function () {
 
 Route::get('search', [SearchController::class, 'search'])->name('search');
 
-Route::prefix('auth')->group(function () {
-    Route::get('google', [LoginController::class, 'redirectToGoogle']);
+Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 
-    Route::get('google/callback', [LoginController::class, 'handleGoogleCallback']);
-});
+Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
 
 

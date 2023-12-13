@@ -15,6 +15,7 @@
 @endsection
 @section('content')
     <div>
+        <audio src="{{asset('assets/Audio/quizFlashcard.m4a')}}" autoplay loop></audio>
         <section id="list-hewan">
             <div class="container text-center">
                 <div id="title-list1">

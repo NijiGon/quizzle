@@ -27,7 +27,7 @@
 
                 <div id="category">
                     <div class="container">
-                        <div class="row align-items-start">
+                        <div class="row align-items-start ">
                             @foreach ($categories as $category)
                             <a href="{{route('category.details', ['id' => $category->id])}}" class="col ctg-1" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{{asset('assets/Images/CategoryThumbnail/' . $category->image)}}'); background-size: cover;">
                                 <h2 id="">{{ $category->name }}</h2>
