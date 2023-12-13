@@ -61,13 +61,22 @@ class LoginController extends Controller
             $user = User::where('google_id', $google_user->getId())->first();
 
             if(!$user){
-                $new_user = User::create([
-                    'name' => $google_user->getName(),
-                    'email' => $google_user->getEmail(),
-                    'google_id' => $google_user->getId(),
-                ]);
+                $old_user = User::where('email', $google_user->getEmail());
+                if(!$old_user){
+                    $new_user = User::create([
+                        'name' => $google_user->getName(),
+                        'email' => $google_user->getEmail(),
+                        'google_id' => $google_user->getId(),
+                    ]);
 
-                Auth::login($new_user);
+                    Auth::login($new_user);
+                }
+                else{
+                    $old_user->update([
+                        'google_id'=>$google_user->getId(),
+                    ]);
+                    Auth::login($old_user);
+                }
 
                 return redirect()->intended('/');
             }
@@ -76,7 +85,7 @@ class LoginController extends Controller
                 return redirect()->intended('/');
             }
 
-        } catch (\Exception $th) {
+        } catch (Exception $th) {
             //throw $th;
             Log::error('Google OAuth Error:', ['error' => $th]);
             dd($th->getMessage());
