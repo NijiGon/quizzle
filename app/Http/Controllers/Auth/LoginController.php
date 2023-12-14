@@ -61,7 +61,7 @@ class LoginController extends Controller
             $user = User::where('google_id', $google_user->getId())->first();
 
             if(!$user){
-                $old_user = User::where('email', $google_user->getEmail());
+                $old_user = User::where('email', $google_user->getEmail())->first();
                 if(!$old_user){
                     $new_user = User::create([
                         'name' => $google_user->getName(),
