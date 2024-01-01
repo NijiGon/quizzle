@@ -31,8 +31,8 @@
                         <img src="{{asset('assets/Images/Logo/quizzlet_logo.png')}}" alt="">
                     </a>
                     <form role="search">
-                        <input id="nav-form" class="form-control z-1" type="search" placeholder="Cari sesuatu?" aria-label="Search">
-                        <div id="searchResults" class="bg-white z-0" style="display: none"></div>
+                        <input id="nav-form" class="form-control z-1" hx-trigger="keyup" hx-target="#searchResults" name="query" hx-get="{{ route('search') }}" type="search" placeholder="Cari sesuatu?" aria-label="Search">
+                        <div id="searchResults" class="bg-white z-0" style=""></div>
                     </form>
 
                     {{-- <ul class="navbar-nav">
