@@ -32,8 +32,13 @@ class UserAnswerController extends Controller
                     'mistakes' => 1,
                 ]);
             }
+            $id = $option->question->id;
+            return view('overlays.wrong', compact('id'));
         }
-        return redirect()->back();
+        $id = $option->question->category->id;
+        $idx = request('idx');
+        return view('overlays.correct', compact('id', 'idx'));
+        // return redirect()->back();
     }
     public function delete($id){
         $user_answer = UserAnswer::where('user_id', auth()->id())->where('question_id', $id)->first();

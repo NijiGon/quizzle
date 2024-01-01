@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('assets/Styles/font.css')}}">
     <link rel="stylesheet" href="{{asset('assets/Styles/navbar1.css')}}">
     <link rel="stylesheet" href="{{asset('assets/Styles/footer.css')}}">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 
     <link rel="icon" href="{{asset('assets/Images/Logo/quizzlet_logo.png')}}" type="image/png">
     @yield('style')
@@ -81,33 +82,5 @@
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        var searchBar = document.getElementById('searchResults')
-        $('#nav-form').on('keyup', function() {
-            var query = $(this).val();
-
-            // Check if the input is empty
-            if (query.trim() === '') {
-                // If empty, hide the search results
-                $('#searchResults').css('display', 'none');
-            } else {
-                // If not empty, show the search results
-                $('#searchResults').css('display', 'block');
-                $.ajax({
-                    url: '{{ route('search') }}',
-                    type: 'GET',
-                    data: { 'query': query },
-                    success: function(data) {
-                        // Update the DOM with search results
-                        $('#searchResults').html(data);
-                        $('#searchResults').css('display', 'block');
-                    }
-                });
-            }
-        });
-    });
-
-    </script>
 </body>
 </html>
