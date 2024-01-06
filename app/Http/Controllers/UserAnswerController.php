@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Option;
+use App\Models\Question;
 use App\Models\UserAnswer;
 use App\Models\UserMistake;
 use Illuminate\Http\Request;
@@ -32,8 +33,16 @@ class UserAnswerController extends Controller
                     'mistakes' => 1,
                 ]);
             }
+            $id = $option->question->id;
+            return view('overlays.wrong', compact('id'));
         }
-        return redirect()->back();
+        $id = $option->question->category->id;
+        $category = $option->question->category;
+        $idx = request('idx');
+        $questions = $category->questions;
+        if($idx + 1 > $questions->count()) return view('overlays.finish', compact('id'));
+        return view('overlays.correct', compact('id', 'idx'));
+        // return redirect()->back();
     }
     public function delete($id){
         $user_answer = UserAnswer::where('user_id', auth()->id())->where('question_id', $id)->first();

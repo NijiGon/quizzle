@@ -29,6 +29,7 @@ class AnswerCheck
             $userAnswer = UserAnswer::where('user_id', $userId)
                     ->where('question_id', $questions[$idx - 1]->id)
                     ->first();
+                    // dd($userAnswer);
             if($userAnswer === null || $userAnswer->option->is_correct !== 1){
                 $i = $idx - 1;
                 while ($i >= 0) {

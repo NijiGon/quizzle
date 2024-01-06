@@ -60,12 +60,12 @@
 
                 <h3>{{ $idx }}. {{ $question->text }}</h3>
                 <div class="row">
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[0]->id])}}">{{$options[0]->text}}</a>
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[1]->id])}}">{{$options[1]->text}}</a>
+                    <a class="col shadow" hx-target="#response" hx-trigger="click" onclick="event.preventDefault();" hx-get="{{route('answer.submit', ['id' => $options[0]->id, 'idx' => $idx])}}">{{$options[0]->text}}</a>
+                    <a class="col shadow" hx-target="#response" hx-trigger="click" onclick="event.preventDefault();" hx-get="{{route('answer.submit', ['id' => $options[1]->id, 'idx' => $idx])}}">{{$options[1]->text}}</a>
                 </div>
                 <div class="row">
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[2]->id])}}">{{$options[2]->text}}</a>
-                    <a class="col shadow" href="{{route('answer.submit', ['id' => $options[3]->id])}}">{{$options[3]->text}}</a>
+                    <a class="col shadow" hx-target="#response" hx-trigger="click" onclick="event.preventDefault();" hx-get="{{route('answer.submit', ['id' => $options[2]->id, 'idx' => $idx])}}">{{$options[2]->text}}</a>
+                    <a class="col shadow" hx-target="#response" hx-trigger="click" onclick="event.preventDefault();" hx-get="{{route('answer.submit', ['id' => $options[3]->id, 'idx' => $idx])}}">{{$options[3]->text}}</a>
                 </div>
             </div>
         </section>
@@ -100,9 +100,16 @@
             @endif
         @endif
 
+        <section id="response">
+
+
+        </section>
+
     </div>
 @endsection
 
 @section('scripts')
     <script src="{{ asset('assets/Scripts/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script> --}}
+
 @endsection
